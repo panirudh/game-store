@@ -1,0 +1,5 @@
+{"_id":{"$oid":"57c06a4b907d641e64218d65"},"name":"Action"}
+{"_id":{"$oid":"57c06a4b907d641e64218d66"},"name":"Adventure"}
+{"_id":{"$oid":"57c06a4b907d641e64218d67"},"name":"Sports"}
+{"_id":{"$oid":"57c06a4d907d641e64218d68"},"name":"Strategy"}
+{"_id":{"$oid":"57c709bde072450c23bd98d1"},"name":"Music \u0026 Dancing","create_date":{"$date":"2016-08-31T16:45:49.073Z"},"__v":0}

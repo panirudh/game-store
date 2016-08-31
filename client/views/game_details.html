@@ -1,0 +1,29 @@
+<div class="panel panel-default" ng-init="getGame()">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{game.title}}</h3>
+  </div>
+  <div class="panel-body">
+	<div class="row">
+		<div class="col-md-4">
+			<img class="thumbnail" src="{{game.img_url}}"/>
+		</div>
+		<div class="col-md-8">
+			<p>{{game.description}}</p>
+			<ul class="list-group">
+			  <li class="list-group-item"><b>Category</b>: {{game.category}}</li>
+			  <li class="list-group-item"><b>Publisher</b>: {{game.publisher}}</li>
+			  <li class="list-group-item"><b>Platform</b>: {{game.platform}}</li>
+			  <li class="list-group-item"><b>Rating</b>: {{game.rating}}</li>
+			  <li class="list-group-item"><b>ASIN</b>: {{game.asin}}</li>
+			</ul>
+			<a target="_blank" class="btn btn-warning" href="{{game.buy_url}}">Buy Now</a>
+		</div>
+		
+	</div>
+  </div>
+</div>
+
+<div class="pull-right">
+	<a href="#/games/edit/{{game._id}}">Edit</a> | 
+	<a href="#" ng-click="removeGame()" id="deletebook">Delete</a>
+</div>

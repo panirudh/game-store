@@ -1,0 +1,21 @@
+<div class="panel panel-primary" ng-init="getcurrentUser()">
+  <div class="panel-heading">
+    <h3  class="panel-title">{{user.facebook.name || user.username}}'s  Personal List</h3>
+ 
+  </div>
+  <div class="panel-body">
+	<div class="row">
+        <div ng-repeat="wish in user.wishlist" class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <img src="{{wish.img_url}}" alt="">
+                <div class="caption">
+                    <h4><a href="">{{wish.title}}</a>
+                    </h4>
+                    <p>{{wish.description | limitTo: 200 }}{{wish.description.length > 200 ? '...' : ''}}</a>.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+  </div>
+</div>

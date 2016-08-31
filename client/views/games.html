@@ -1,0 +1,112 @@
+
+<div class="row">
+
+            <div class="col-md-3" ng-init="getGenres()">
+                <p class="lead">Categories</p>
+                <div class="list-group">
+                    <a href="" ng-repeat="genre in genres" ng-click="getGameByCategory(genre.name)"   class="list-group-item">{{genre.name}}</a>
+                </div>
+				
+				<div class="list-group vert-offset-top-4">
+                    <a href="#/genre/add"  ng-if="currentUser" class="list-group-item glyphicon glyphicon-plus"> Add Category</a>
+                    <a href="#/games/add"   ng-if="currentUser" class="list-group-item glyphicon glyphicon-plus"> Add Games</a>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+			<div class="row">
+        <div class="col-md-6 col-md-offset-6">
+                <div class="form-group has-feedback">
+            		<label for="search" class="sr-only">Search</label>
+            		<input type="text" class="form-control" ng-model="searchTextModel" ng-change="searchText()" name="search" id="search" placeholder="search using Title or ASIN">
+              		<span class="glyphicon glyphicon-search form-control-feedback"></span>
+            	</div>
+        </div>
+    </div>
+
+                <!--div class="row carousel-holder">
+
+                    <div class="col-md-12">
+                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img class="slide-image" src="http://placeimg.com/800/300/any" alt="">
+                                </div>
+                                <div class="item">
+                                    <img class="slide-image" src="http://placeimg.com/800/300/any" alt="">
+                                </div>
+                                <div class="item">
+                                    <img class="slide-image" src="http://placeimg.com/800/300/any" alt="">
+                                </div>
+                            </div>
+                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div-->
+				
+                <div ng-show = "!showCategory" class="row" ng-init="searchText()">
+
+                    <div  ng-if= "!searchGames" ng-repeat="game in games" class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="{{game.img_url}}" alt="">
+                            <div class="caption">
+                                <h4><a href="#">{{game.title}}</a>
+                                </h4>
+                                <p>{{game.description | limitTo: 200 }}{{game.description.length > 200 ? '...' : ''}}</a>.</p>
+                            </div>
+                            <div>
+                                <a class="btn btn-primary" role="button" href="#/games/details/{{game._id}}">View Details</a>
+								<a ng-if="currentUser" class="btn btn-primary" role="button" ng-click="updateWishList(game)">Wishlist Add</a>
+                            </div>
+                        </div>
+                    </div>
+					<!--div ng-if="!searchresults.length">No Results</div-->
+					<div  ng-if= "searchGames" ng-repeat="game in searchresults"  class="col-sm-4 col-lg-4 col-md-4">
+						
+                        <div class="thumbnail">
+                            <img src="{{game.img_url}}" alt="">
+                            <div class="caption">
+                                <h4><a href="#">{{game.title}}</a>
+                                </h4>
+                                <p>{{game.description | limitTo: 200 }}{{game.description.length > 200 ? '...' : ''}}</a>.</p>
+                            </div>
+                            <div>
+                                <a class="btn btn-primary" role="button" href="#/games/details/{{game._id}}">View Details</a>
+								<a ng-if="currentUser" class="btn btn-primary" role="button" ng-click="updateWishList(game)">Wishlist Add</a>
+                            </div>
+                        </div>
+                    </div>
+				</div>	
+				
+				<div class="row">
+					<div ng-if = "showCategory" ng-repeat="game in cats" class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="{{game.img_url}}" alt="">
+                            <div class="caption">
+                                <h4><a href="#">{{game.title}}</a>
+                                </h4>
+                                <p>{{game.description | limitTo: 200 }}{{game.description.length > 200 ? '...' : ''}}</a>.</p>
+                            </div>
+                            <div>
+                                <a class="btn btn-primary" role="button" href="#/games/details/{{game._id}}">View Details</a>
+								<a ng-if="currentUser" class="btn btn-primary" role="button" ng-click="updateWishList(game)">Wishlist Add</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
