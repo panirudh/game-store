@@ -67,7 +67,7 @@
                             </div>
                             <div>
                                 <a class="btn btn-primary" role="button" href="#/games/details/{{game._id}}">View Details</a>
-								<a ng-if="currentUser" class="btn btn-primary" role="button" ng-click="updateWishList(game)">Wishlist Add</a>
+								<a ng-if="currentUser" class="btn btn-primary" role="button" ng-click="updateWishList(game)"><span class="glyphicon glyphicon-heart"></span> Add to Wishlist</a>
                             </div>
                         </div>
                     </div>
@@ -83,14 +83,14 @@
                             </div>
                             <div>
                                 <a class="btn btn-primary" role="button" href="#/games/details/{{game._id}}">View Details</a>
-								<a ng-if="currentUser" class="btn btn-primary" role="button" ng-click="updateWishList(game)">Wishlist Add</a>
+								<a ng-if="currentUser" class="btn btn-primary" role="button" ng-click="updateWishList(game)"><span class="glyphicon glyphicon-heart"></span> Add to Wishlist</a>
                             </div>
                         </div>
                     </div>
 				</div>	
 				
-				<div class="row">
-					<div ng-if = "showCategory" ng-repeat="game in cats" class="col-sm-4 col-lg-4 col-md-4">
+				<div ng-if = "showCategory" class="row">
+					<div ng-repeat="game in cats" class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
                             <img src="{{game.img_url}}" alt="">
                             <div class="caption">
@@ -100,7 +100,7 @@
                             </div>
                             <div>
                                 <a class="btn btn-primary" role="button" href="#/games/details/{{game._id}}">View Details</a>
-								<a ng-if="currentUser" class="btn btn-primary" role="button" ng-click="updateWishList(game)">Wishlist Add</a>
+								<a ng-if="currentUser" class="btn btn-primary" role="button" ng-click="updateWishList(game)"><span class="glyphicon glyphicon-heart"></span> Add to Wishlist</a>
                             </div>
                         </div>
                     </div>

@@ -1,12 +1,21 @@
 var myApp = angular.module('myApp');
 
-myApp.controller('GamesController', ['$scope', '$http', '$location', '$routeParams', '$rootScope', function($scope, $http, $location, $routeParams, $rootScope){
+myApp.controller('GamesController', ['$scope', '$http', '$location', '$routeParams', '$rootScope', '$mdToast', function($scope, $http, $location, $routeParams, $rootScope, $mdToast){
     console.log("Games Controller Loaded");
 	var searchMin = 4;
 	$scope.currentUser = $rootScope.currentUser;
 	$scope.searchTextModel = '';
 	$scope.showCategory = false;
 	$scope.searchGames = false;
+	
+	$scope.showSimpleToast = function() {
+    $mdToast.show(
+      $mdToast.simple()
+        .textContent('Added to your Wish List')
+        .position("bottom right")
+        .hideDelay(3000)
+    );
+    }
 	
     $scope.getGames = function(){
         $http.get('/api/games').success(function(response){
@@ -77,7 +86,7 @@ myApp.controller('GamesController', ['$scope', '$http', '$location', '$routePara
 	$scope.updateWishList = function(game){
 		var id=$rootScope.currentUser._id;
         $http.put('/api/wishlist/'+id, game).success(function(response){
-            window.location.href='#/games';
+			$scope.showSimpleToast();
         });
     }
 

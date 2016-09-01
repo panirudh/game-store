@@ -1,4 +1,4 @@
-<div class="panel panel-default">
+<div class="panel panel-primary">
   <div class="panel-heading">
     <h3 class="panel-title">Add Game</h3>
   </div>
@@ -10,13 +10,10 @@
 			<label for="title">Title</label>
 			<input type="text" class="form-control" ng-model="game.title"  placeholder="Title">
 		  </div>
-		  <div class="form-group">
+		  <div ng-init="getGenres()" class="form-group">
 			<label for="category">Category</label>
 			<select ng-model="game.category" class="form-control">
-				<option value="Action">Action</option>
-				<option value="Action">Adventure</option>
-				<option value="Action">Strategy</option>
-				<option value="Action">Sports</option>
+				<option ng-repeat="genre in genres" value="{{genre.name}}">{{genre.name}}</option>
 			</select>
 			
 		  </div>

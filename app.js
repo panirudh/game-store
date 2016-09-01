@@ -34,4 +34,5 @@ require('./routes/genres.js')(app);
 require('./routes/games.js')(app);
 require('./routes/users.js')(app);
 
-app.listen(5000);
+//listen port
+app.listen(process.env.PORT || 3000);

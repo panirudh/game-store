@@ -10,6 +10,7 @@
 		<!-- load fontawesome -->
 		<link rel="stylesheet" href="lib/css/font-awesome.min.css"> 
         <link rel="stylesheet" href="lib/css/style.css"> 
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
 
 	</head>
 	<body>
@@ -30,7 +31,8 @@
                 <li> <a href="#signup">Sign Up</a></li>
               </ul>
               <ul ng-show="currentUser" class="nav navbar-nav navbar-right">
-                <li><a href="#/wishlist">Wish Lsit</a></li>
+				<li><a href="#/games">Games</a></li>
+                <li><a href="#/wishlist">Wish List</a></li>
                 <li><a href="#/users">Users List</a></li>
                 <li><a href="#/games" ng-click="logout()">Logout</a></li>
               </ul>
@@ -63,6 +65,11 @@
 		<script src="./lib/js/jquery-2.1.4.min.js" type="text/javascript"></script>
 		<script src="./lib/js/bootstrap.min.js"></script>
 		<script src="./lib/js/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+		<!-- Angular Material Library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
 		<script src="./lib/js/angular-route.js"></script>
 		<script src="./controller/app.js" type="text/javascript"></script>
 		<script src="./controller/common.controller.js" type="text/javascript"></script>
